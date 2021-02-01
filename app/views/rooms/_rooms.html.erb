@@ -7,7 +7,10 @@
 <% if @rooms.present? %>
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
-      <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %>
+      <div class="room-nav-link row">
+        <%= link_to room.name, room_path(room), class: 'nav-link col-sm-8' %>
+        <%= link_to "Delete", room_path(room), method: :delete, data: { confirm: "Are you sure deleting this room?" }, class: 'btn btn-danger btn-sm col-sm-4' %>
+      </div>
     <% end %>
   </nav>
 <% else %>

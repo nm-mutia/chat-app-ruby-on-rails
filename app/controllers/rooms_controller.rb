@@ -36,6 +36,13 @@ class RoomsController < ApplicationController
           render :new
         end
     end
+
+    def destroy
+        @room = Room.find(params[:id])
+        @room.destroy
+
+        redirect_to root_path
+    end
     
     protected
         def load_entities
