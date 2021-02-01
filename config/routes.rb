@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "rooms#index"
+  root to: "rooms#index"
 
   resources :room_messages
   resources :rooms
