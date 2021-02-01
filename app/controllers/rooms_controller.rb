@@ -1,10 +1,11 @@
 class RoomsController < ApplicationController
+    before_action :load_entities
+
     def index
         @rooms = Room.all
     end
 
     def show
-        load_entities
         @room_message = RoomMessage.new(room: @room)
         @room_messages = @room.room_messages.includes(:user)
     end
