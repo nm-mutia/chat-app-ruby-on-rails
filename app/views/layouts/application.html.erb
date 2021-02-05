@@ -17,8 +17,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          
+
           <div class="my-3">
+            <% if flash[:success] %>
+              <%= render "shared/alert" %>
+            <% end %>
+
             <%= yield %>
           </div>
           

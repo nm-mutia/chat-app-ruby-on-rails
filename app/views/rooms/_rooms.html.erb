@@ -1,20 +1,25 @@
-<div class="mb-3">
-  <%= link_to new_room_path, class: 'btn btn-primary' do %>
-    Create a room
-  <% end %>
-</div>
-
 <% if @rooms.present? %>
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
-      <div class="room-nav-link row">
+      <div class="room-nav-link row ">
         <%= link_to room.name, room_path(room), class: 'nav-link col-sm-8' %>
-        <%= link_to "Delete", room_path(room), method: :delete, data: { confirm: "Are you sure deleting this room?" }, class: 'btn btn-danger btn-sm col-sm-4' %>
+        <%= link_to room_path(room), method: :delete, data: { confirm: "Are you sure deleting this room?" }, class: 'btn col-sm-4' do %>
+          <%= fa_icon "trash", text: "BB", class: 'mx-2', size: '3x' %>
+        <% end %>
       </div>
     <% end %>
   </nav>
 <% else %>
-  <div class="text-muted">
+  <div class="text-muted" align="center">
     There are no rooms
   </div>
 <% end %>
+
+
+<br>
+
+<div class="d-grid gap-2 col-10 mx-auto">
+  <%= link_to new_room_path, class: 'btn btn-lg btn-primary' do %>
+    Create a room
+  <% end %>
+</div>

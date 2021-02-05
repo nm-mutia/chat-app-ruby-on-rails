@@ -77,5 +77,6 @@ test:
 production:
   <<: *default
   database: chat-app-ruby-on-rails_production
+  # url: <%= ENV['DATABASE_URL'] %>
   # username: chat-app-ruby-on-rails
   # password: <%= ENV['CHAT-APP-RUBY-ON-RAILS_DATABASE_PASSWORD'] %>
